@@ -1,0 +1,61 @@
+openapi: 3.0.0
+info:
+  title: API de Matriz
+  description: API para operar sobre matrices y calcular valores específicos.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Servidor local
+paths:
+  /matriz:
+    post:
+      summary: Calcula valores específicos de una matriz.
+      description: Recibe una matriz rectangular rotada y devuelve un JSON con los valores máximos, mínimos, promedio, suma total y diagonal principal.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                matriz:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: number
+      responses:
+        '200':
+          description: Retorna los valores calculados de la matriz.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Matriz'
+        '400':
+          description: Solicitud inválida. Verifique los datos enviados.
+components:
+  schemas:
+    Matriz:
+      type: object
+      properties:
+        val_valor_maximo:
+          type: number
+          description: Valor máximo de la matriz.
+        val_valor_minimo:
+          type: number
+          description: Valor mínimo de la matriz.
+        val_promedio:
+          type: number
+          description: Promedio de los valores de la matriz.
+        val_suma_total:
+          type: number
+          description: Suma total de los valores de la matriz.
+        val_matriz_diagonal:
+          type: number
+          description: Suma de los valores de la diagonal principal de la matriz.
+      required:
+        - val_valor_maximo
+        - val_valor_minimo
+        - val_promedio
+        - val_suma_total
+        - val_matriz_diagonal
