@@ -1,0 +1,16 @@
+# Ignorar módulos de Go
+/pkg
+/bin
+
+# Ignorar archivos del sistema operativo
+.DS_Store
+
+# Ignorar archivos de configuración del editor
+.vscode
+
+# Ignorar el archivo ejecutable
+main
+
+# Ignorar otros archivos innecesarios
+*.log
+*.swp
