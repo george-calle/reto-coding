@@ -7,12 +7,13 @@ Link del HDL: https://app.diagrams.net/#G18cH0Ni2PdkeEnZ64UdzD4vV4LG0smm_e#%7B%2
 
 ## Coding-Challenge:
 Se indican los 2 retos realizados.
-* API Restful con GO y Fiber:
+
+API Restful con GO y Fiber:
 - Repositorio api-go-fiber
 - https://api-go-fiber-ckthsxro7a-uc.a.run.app/api-docs/swagger.yaml
 
-* API Restful con Nodejs y Express:
+API Restful con Nodejs y Express:
 - Repositorio api-node-express
 - https://api-node-express-ckthsxro7a-uc.a.run.app/api-docs/
 
-- Revisar la sección Wiki, donde se encuentra información más detallada del reto completo.
+### Revisar la sección Wiki, donde se encuentra información más detallada del reto completo.
