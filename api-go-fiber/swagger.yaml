@@ -1,0 +1,60 @@
+openapi: 3.0.1
+info:
+  title: Matriz API
+  description: API para operaciones con matrices rectangulares.
+  version: 1.0.0
+servers:
+  - url: http://localhost:2000
+    description: Servidor local
+
+paths:
+  /matriz:
+    post:
+      summary: Rota una matriz rectangular
+      description: Recibe una matriz rectangular y devuelve la misma matriz rotada en formato JSON.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                matriz:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: integer
+              example:
+                matriz: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+      responses:
+        '200':
+          description: Matriz rotada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  matriz:
+                    type: array
+                    items:
+                      type: array
+                      items:
+                        type: integer
+              example:
+                matriz: [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+        '400':
+          description: Solicitud inválida. La matriz debe ser rectangular.
+components:
+  schemas:
+    Matriz:
+      type: object
+      properties:
+        matriz:
+          type: array
+          items:
+            type: array
+            items:
+              type: integer
+      example:
+        matriz: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
